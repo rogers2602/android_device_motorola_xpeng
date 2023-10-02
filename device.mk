@@ -9,6 +9,21 @@
 # A/B
 TARGET_IS_VAB := true
 
+# CherishOS Stuff with GApps
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_ENABLE_BLUR := true
+WITH_GMS := true
+
+# Maintainer Stuff
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.cherish.maintainer=DevMarques-Rogers
+CHERISH_BUILD_TYPE := OFFICIAL
+
+# Target
+TARGET_BOOT_ANIMATION_RES := 1080
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
