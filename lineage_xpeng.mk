@@ -20,6 +20,13 @@ PRODUCT_MANUFACTURER := motorola
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := moto g200 5G
 
+# Havoc-OS
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.havoc.device.name="moto g200 5G" \
+    ro.havoc.group.url=https://t.me/g200s30development \
+    ro.havoc.maintainer="Rogers Marques" \
+    ro.havoc.maintainer.username=DevMarques \
+
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
