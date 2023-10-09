@@ -27,6 +27,9 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.havoc.maintainer="Rogers Marques" \
     ro.havoc.maintainer.username=DevMarques \
 
+# With GApps
+WITH_GMS := true
+
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
