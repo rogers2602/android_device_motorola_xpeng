@@ -26,4 +26,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=xpeng_retail \
     PRIVATE_BUILD_DESC="xpeng_g-user 12 S1RXS32.50-13-23 37821c-6bd54 release-keys"
 
+# Private keys
+-include vendor/evolution-priv/keys/keys.mk
+
 BUILD_FINGERPRINT := motorola/xpeng_g/xpeng:12/S1RXS32.50-13-23/37821c-6bd54:user/release-keys
