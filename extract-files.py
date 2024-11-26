@@ -7,6 +7,11 @@
 from extract_utils.extract import extract_fns_user_type
 from extract_utils.extract_star import extract_star_firmware
 
+from extract_utils.fixups_blob import (
+    blob_fixup,
+    blob_fixups_user_type,
+)
+
 from extract_utils.fixups_lib import (
     lib_fixups,
     lib_fixups_user_type,
@@ -30,6 +35,11 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
 }
 
+blob_fixups: blob_fixups_user_type = {
+    ('vendor/lib/libmot_chi_desktop_helper.so', 'vendor/lib64/libmot_chi_desktop_helper.so'): blob_fixup()
+        .add_needed('libgui_shim_vendor.so'),
+}  # fmt: skip
+
 extract_fns: extract_fns_user_type = {
     r'(bootloader|radio)\.img': extract_star_firmware,
 }
@@ -37,6 +47,7 @@ extract_fns: extract_fns_user_type = {
 module = ExtractUtilsModule(
     'xpeng',
     'motorola',
+    blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
     extract_fns=extract_fns,
