@@ -66,7 +66,7 @@ $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/bin/*.sh),\
 # Init (recovery)
 PRODUCT_PACKAGES += \
     init.recovery.xpeng.rc \
-    load_touch.sh
+    load_touch.sh.recovery
 
 # Lineage Touch
 PRODUCT_PACKAGES += \
