@@ -1,6 +1,5 @@
 #
-# Copyright (C) 2022-2023 The LineageOS Project
-#
+# SPDX-FileCopyrightText: 2022-2024 The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
 
@@ -13,7 +12,7 @@ include device/motorola/sm7325-common/BoardConfigCommon.mk
 TARGET_BOOTLOADER_BOARD_NAME := xpeng
 
 # HIDL
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest_xpeng.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.hab.product=xpeng
@@ -38,7 +37,12 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 90
 
 # Security
-VENDOR_SECURITY_PATCH := 2024-01-01
+BOOT_SECURITY_PATCH := 2024-01-01
+VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
+
+# Verified Boot
+BOARD_AVB_ROLLBACK_INDEX := 20
+BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := 20
 
 # inherit from the proprietary version
 include vendor/motorola/xpeng/BoardConfigVendor.mk

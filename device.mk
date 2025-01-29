@@ -1,9 +1,6 @@
 #
-# Copyright (C) 2022-2023 The LineageOS Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# SPDX-FileCopyrightText: 2022-2025 The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
 #
 
 # A/B
@@ -33,7 +30,8 @@ PRODUCT_PACKAGES += \
     LineagePlatformXpeng \
     LineageSystemUIXpeng \
     SettingsProviderResXpeng \
-    SystemUIResXpeng
+    SystemUIResXpeng \
+    WifiResXpeng
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -50,8 +48,7 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.xpeng \
-    com.motorola.hardware.biometric.fingerprint@1.0.vendor
+    android.hardware.biometrics.fingerprint@2.1-service.xpeng
 
 $(foreach f,$(wildcard $(LOCAL_PATH)/configs/idc/*.idc),\
         $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/usr/idc/$(notdir $f)))
@@ -69,7 +66,7 @@ $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/bin/*.sh),\
 # Init (recovery)
 PRODUCT_PACKAGES += \
     init.recovery.xpeng.rc \
-    load_touch.sh
+    load_touch.sh.recovery
 
 # Lineage Touch
 PRODUCT_PACKAGES += \
@@ -81,13 +78,9 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2.vendor \
     android.hardware.nfc@1.2-service.st \
-    android.hardware.secure_element@1.2.vendor \
     com.android.nfc_extras \
-    libchrome.vendor \
-    Tag \
-    nfc_nci.st21nfc.default
+    Tag
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -100,6 +93,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
 
 # Thermal
 PRODUCT_COPY_FILES += \
