@@ -1,6 +1,6 @@
 #!/usr/bin/env -S PYTHONPATH=../../../tools/extract-utils python3
 #
-# SPDX-FileCopyrightText: 2024 The LineageOS Project
+# SPDX-FileCopyrightText: The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
 
@@ -50,6 +50,7 @@ module = ExtractUtilsModule(
     namespace_imports=namespace_imports,
     extract_fns=extract_fns,
     add_firmware_proprietary_file=True,
+    add_generated_carriersettings=True,
 )
 
 if __name__ == '__main__':
