@@ -25,12 +25,12 @@ $(call inherit-product, device/motorola/sm7325-common/common.mk)
 
 # Overlays
 PRODUCT_PACKAGES += \
-    FrameworksResXpeng \
-    LineageApertureAppXpeng \
-    LineagePlatformXpeng \
-    LineageSystemUIXpeng \
-    SystemUIResXpeng \
-    WifiResXpeng
+    FrameworksResDevice \
+    LineageApertureAppDevice \
+    LineagePlatformDevice \
+    LineageSystemUIDevice \
+    SystemUIResDevice \
+    WifiResDevice
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -73,7 +73,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.xpeng
+    android.hardware.lights-service.lineage
 
 # NFC
 PRODUCT_PACKAGES += \
